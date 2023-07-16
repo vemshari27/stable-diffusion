@@ -27,15 +27,15 @@ model:
 data:
   target: main.DataModuleFromConfig
   params:
-    batch_size: 12
+    batch_size: 4
     wrap: True
     train:
-      target: ldm.data.imagenet.ImageNetSRTrain
+      target: ldm.data.custom.CustomTrain
       params:
         size: 256
         degradation: pil_nearest
     validation:
-      target: ldm.data.imagenet.ImageNetSRValidation
+      target: ldm.data.custom.CustomVal
       params:
         size: 256
         degradation: pil_nearest
